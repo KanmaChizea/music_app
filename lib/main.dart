@@ -23,10 +23,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Musica',
-        home: Responsive(
-            mobile: MainScreenMobile(),
-            tablet: MainScreenWeb(),
-            desktop: MainScreenWeb()),
+        home: Responsive(mobile: MainScreenMobile(), desktop: MainScreenWeb()),
       ),
     );
   }

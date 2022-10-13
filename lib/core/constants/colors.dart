@@ -5,3 +5,4 @@ const onAppBar = Color(0x3EFFFFFF);
 const secondary = Color(0xFFFACD66);
 const darkAlt = Color(0xFF1A1E1F);
 const icon = Color(0xFFEFEEE0);
+const blue = Color(0xFF609EAF);

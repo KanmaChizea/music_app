@@ -12,18 +12,15 @@ class MobileAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => AppbarHandlingCubit(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
-          child: BlocBuilder<AppbarHandlingCubit, AppbarState>(
-              builder: (context, state) {
-            switch (state) {
-              case AppbarState.normal:
-                return const NormalAppbar();
-              case AppbarState.search:
-                return const SearchAppbar();
-            }
-          }),
-        ));
+        child: BlocBuilder<AppbarHandlingCubit, AppbarState>(
+            builder: (context, state) {
+          switch (state) {
+            case AppbarState.normal:
+              return const NormalAppbar();
+            case AppbarState.search:
+              return const SearchAppbar();
+          }
+        }));
   }
 }
 

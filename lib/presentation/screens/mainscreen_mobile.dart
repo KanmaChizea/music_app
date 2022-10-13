@@ -16,19 +16,23 @@ class MainScreenMobile extends StatelessWidget {
     return Scaffold(
       backgroundColor: background,
       drawer: const AppDrawer(),
-      body: Column(
-        children: [
-          const MobileAppbar(),
-          BlocBuilder<NavBarCubit, int>(
-            builder: (context, state) {
-              if (state == 0) {
-                return const HomeMobile();
-              } else {
-                return const PlaylistMobile();
-              }
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 24),
+        child: Column(
+          children: [
+            const MobileAppbar(),
+            const SizedBox(height: 26),
+            BlocBuilder<NavBarCubit, int>(
+              builder: (context, state) {
+                if (state == 0) {
+                  return const HomeMobile();
+                } else {
+                  return const PlaylistMobile();
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
